@@ -1,5 +1,8 @@
 {
-  "name": "tailwindcss.d.ts",
+  "publicConfig": {
+    "access": "public"
+  },
+  "name": "@nju33/tailwindcss.d.ts",
   "version": "0.0.0",
   "main": "index.js",
   "repository": "git@github.com:nju33/tailwindcss.d.ts.git",
@@ -8,5 +11,9 @@
   "devDependencies": {
     "prettier": "1.19.1",
     "typescript": "3.7.5"
-  }
+  },
+  "types": "tailwindcss.d.ts",
+  "files": [
+    "tailwindcss.d.ts"
+  ]
 }
