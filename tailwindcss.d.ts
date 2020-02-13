@@ -23,7 +23,7 @@ type ThemeSection<Values extends object> =
   | Values
   | false;
 
-export interface TailWindConfiguration {
+export interface TailwindcssConfiguration {
   prefix?: string;
   important?: boolean;
   separator?: string;
