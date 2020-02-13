@@ -33,7 +33,64 @@ export interface TailWindConfiguration {
   plugins?: any[];
 }
 
-export interface CorePlugins {}
+export interface CorePlugins {
+  overflow?: false;
+  justifyContent?: false;
+  tableLayout?: false;
+  whitespace?: false;
+  transformOrigin?: false;
+  scale?: false;
+  boxShadow?: false;
+  stroke?: false;
+  strokeWidth?: false;
+  textAlign?: false;
+  textTransform?: false;
+  position?: false;
+  fontStyle?: false;
+  gridRow?: false;
+  gridRowStart?: false;
+  gridRowStartEnd?: false;
+  backgroundRepeat?: false;
+  backgroundAttachment?: false;
+  backgroundColor?: false;
+  backgroundSize?: false;
+  appearance?: false;
+  borderStyle?: false;
+  boxSizing?: false;
+  display?: false;
+  alignSelf?: false;
+  alignContent?: false;
+  alignItems?: false;
+  rotate?: false;
+  translate?: false;
+  flex?: false;
+  flexWrap?: false;
+  flexDirection?: false;
+  flexShrink?: false;
+  flexGrow?: false;
+  clear?: false;
+  objectPosition?: false;
+  objectFit?: false;
+  skew?: false;
+  transitionDuration?: false;
+  transitionProperty?: false;
+  visibility?: false;
+  wordBreak?: false;
+  gridAutoFlow?: false;
+  verticalAlign?: false;
+  borderCollapse?: false;
+  float: false;
+  outline?: false;
+  pointerEvents?: false;
+  resize?: false;
+  fill?: false;
+  userSelect?: false;
+  fontSmoothing?: false;
+  transitionTimingFunction?: false;
+  listStylePosition?: false;
+  accessibility?: false;
+  textDecoration?: false;
+}
 
 export interface Theme {
   /**
@@ -47,6 +104,7 @@ export interface Theme {
   margin?: ThemeSection<Record<string, string>>;
   backgroundPosition?: ThemeSection<Record<string, string>>;
   backgroundSize?: ThemeSection<Record<string, string>>;
+  backgroundColor?: ThemeSection<Record<string, string>>;
   borderRadius?: ThemeSection<Record<string, string>>;
   borderWidth?: ThemeSection<Record<string, string>>;
   boxShadow?: ThemeSection<Record<string, string>>;
@@ -83,10 +141,13 @@ export interface Theme {
   transformOrigin?: ThemeSection<Record<string, string>>;
   scale?: ThemeSection<Record<string, string>>;
   rotate?: ThemeSection<Record<string, string>>;
+  translate?: ThemeSection<Record<string, string>>;
   skew?: ThemeSection<Record<string, string>>;
   transitionProperty?: ThemeSection<Record<string, string>>;
   transitionTimingFunction?: ThemeSection<Record<string, string>>;
   transitionDuration?: ThemeSection<Record<string, string>>;
+  negativeMargin?: ThemeSection<Record<string, string>>;
+  textColor?: ThemeSection<Record<string, string>>;
 }
 
 export interface Screens {
