@@ -1,13 +1,27 @@
 interface ResolveConfigUtils {
   negative: (scale: Record<string, string>) => Record<string, string>;
-  breakpoints: (screens: Screens) => (Screens & Record<'screen-xl' | 'screen-sm' | 'screen-md' | 'screen-lg' | 'screen-xl', string>);
+  breakpoints: (
+    screens: Screens
+  ) => Screens &
+    Record<
+      'screen-xl' | 'screen-sm' | 'screen-md' | 'screen-lg' | 'screen-xl',
+      string
+    >;
 }
 
-type ResolveThemePathFunction = <K extends keyof Omit<Theme, 'extend'>>(key: K) => Theme[K];
+type ResolveThemePathFunction = <K extends keyof Omit<Theme, 'extend'>>(
+  key: K
+) => Theme[K];
 
-type ResolveConfigFunction<Values extends object> = (theme: ResolveThemePathFunction, {utils: ResolveCoonfigUtils}) => Values;
+type ResolveConfigFunction<Values extends object> = (
+  theme: ResolveThemePathFunction,
+  {utils: ResolveCoonfigUtils}
+) => Values;
 
-type ThemeSection<Values extends object> = ResolveConfigFunction<Values> | Values | false;
+type ThemeSection<Values extends object> =
+  | ResolveConfigFunction<Values>
+  | Values
+  | false;
 
 export interface TailWindConfiguration {
   prefix?: string;
@@ -29,6 +43,8 @@ export interface Theme {
   screens?: Screens;
   colors?: Record<string, string | Record<string, string>>;
   spacing?: ThemeSection<Record<string, string>>;
+  padding?: ThemeSection<Record<string, string>>;
+  margin?: ThemeSection<Record<string, string>>;
   backgroundPosition?: ThemeSection<Record<string, string>>;
   backgroundSize?: ThemeSection<Record<string, string>>;
   borderRadius?: ThemeSection<Record<string, string>>;
@@ -51,11 +67,11 @@ export interface Theme {
   minHeight?: ThemeSection<Record<string, string>>;
   minWidth?: ThemeSection<Record<string, string>>;
   objectPosition?: ThemeSection<Record<string, string>>;
-  opacity?: ThemeSection<Record<string, string>>
+  opacity?: ThemeSection<Record<string, string>>;
   order?: ThemeSection<Record<string, string>>;
   stroke?: ThemeSection<Record<string, string>>;
-  strokeWidth?:ThemeSection<Record<string, string>>
-  zIndex?: ThemeSection<Record<string, string>>
+  strokeWidth?: ThemeSection<Record<string, string>>;
+  zIndex?: ThemeSection<Record<string, string>>;
   gridTemplateColumns?: ThemeSection<Record<string, string>>;
   gridColumn?: ThemeSection<Record<string, string>>;
   gridColumnStart?: ThemeSection<Record<string, string>>;
@@ -65,7 +81,7 @@ export interface Theme {
   gridRowStart?: ThemeSection<Record<string, string>>;
   gridRowEnd?: ThemeSection<Record<string, string>>;
   transformOrigin?: ThemeSection<Record<string, string>>;
-  scale?: ThemeSection<Record<string, string>>
+  scale?: ThemeSection<Record<string, string>>;
   rotate?: ThemeSection<Record<string, string>>;
   skew?: ThemeSection<Record<string, string>>;
   transitionProperty?: ThemeSection<Record<string, string>>;
@@ -81,16 +97,16 @@ export interface Screens {
   xl?: string;
 }
 
-export type Variant = 
-| 'responsive'
-| 'group-hover'
-| 'focus-within'
-| 'first'
-| 'last'
-| 'odd'
-| 'even'
-| 'hover'
-| 'focus'
-| 'active'
-| 'visited'
-| 'disabled';
+export type Variant =
+  | 'responsive'
+  | 'group-hover'
+  | 'focus-within'
+  | 'first'
+  | 'last'
+  | 'odd'
+  | 'even'
+  | 'hover'
+  | 'focus'
+  | 'active'
+  | 'visited'
+  | 'disabled';
