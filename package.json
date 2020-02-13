@@ -1,5 +1,5 @@
 {
-  "publicConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "name": "@nju33/tailwindcss.d.ts",
